@@ -1,89 +1,28 @@
 <?php
-/* importo file */
-require_once __DIR__ . "/Movie.php";
+// imposto file
+require_once "db/arrayMovie.php";
+require_once "Models/Movie.php";
 
-/*istanza 1 */
-$movie1 = new Movie(
-    "Titanic",
-    "James Cameron",
-    "1997",
-    ["Romantico", "Drammatico"],
-    "Inglese",
-);
+$movies = [];
 
-// var_dump($movie1);
-echo $movie1->getInfoMovie();
-
-/* istanza 2 */
-$movie2 = new Movie(
-    "Inception",
-    "Christopher Nolan",
-    "2010",
-    ["Fantascienza", "Azione"],
-    "Inglese",
-);
-
-//  var_dump($movie2);
-echo $movie2->getInfoMovie();
-
-
-/* istanza 3 */
-$movie3 = new Movie(
-    "The Shawshank Redemption",
-    "Frank Darabont",
-    "1994",
-    ["Drammatico", "Crimine"],
-    "Inglese",
-);
-//  var_dump($movie3);
-echo $movie3->getInfoMovie();
-
-/*istanza 4 */
-$movie4 = new Movie(
-    "La La Land",
-    "Damien Chazelle",
-    "2016",
-    ["Musical", "Romantico"],
-    "Inglese",
-);
-
-//  var_dump($movie4);
-echo $movie4->getInfoMovie();
-
-
-/* istanza 5 */
-$movie5 = new Movie(
-    "La vita è bella",
-    "Roberto Benigni",
-    "1997",
-    ["Commedia", "Drammatico"],
-    "Italiano",
-);
-
-//  var_dump($movie5);
-echo $movie5->getInfoMovie();
-
-
-/* istanza 6 */
-$movie6 = new Movie(
-    "Water for Elephants",
-    "Francis Lawrence",
-    "2011",
-    ["Drammatico", "Romantico"],
-    "Inglese",
-);
-
-//  var_dump($movie6);
-echo $movie6->getInfoMovie();
-
+foreach ($moviesList as $singleMovie) {
+    $movie = new Movie(
+        $singleMovie["title"],
+        $singleMovie["director"],
+        $singleMovie["year"],
+        $singleMovie["genres"],
+        $singleMovie["language"]
+    );
+    $movies[] = $movie;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="https://boolean.careers/favicon/favicon.ico" />
     <title>Php-oop-1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
@@ -94,8 +33,19 @@ echo $movie6->getInfoMovie();
 
 <body>
     <div id="app">
+        <div class="container">
+            <div class="row my-4">
+                    <?php
+                    foreach ($movies as $movie) {
+                        echo "<div class='col-4 py-4'>";
+                        echo $movie->getInfoMovie();
+                        echo "</div>";
+                    }
+                    ?>
+            </div>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

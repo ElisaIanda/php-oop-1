@@ -18,11 +18,18 @@ class Movie
     }
 
     public function getInfoMovie()
-    {return "
-    <h1>{$this->title}</h1>
-    <p><b>Regista:</b> {$this->director}</p>
-    <p><b>Anno:</b> {$this->years}</p>
-    <p><b>Generi:</b> " . implode(", ", $this->genres) . "</p>
-    <p><b>Lingua:</b> {$this->language}</p>";
+    {
+        return "
+        <div >
+            <div >
+                <h5 ><b>Film:</b> {$this->title}</h5>
+            </div>
+            <ul >
+                <li ><b>Regista:</b> {$this->director}</li>
+                <li ><b>Anno:</b> {$this->years}</li>
+                <li ><b>Generi:</b> " . implode(", ", $this->genres) . "</li>
+                <li ><b>Lingua:</b> {$this->language}</li>
+            </ul>
+        </div>";
     }
 }
