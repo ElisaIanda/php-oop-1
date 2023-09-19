@@ -7,8 +7,8 @@ $movie1 = new Movie(
     "Titanic",
     "James Cameron",
     "1997",
+    ["Romantico", "Drammatico"],
     "Inglese",
-    "Romantico"
 );
 
 // var_dump($movie1);
@@ -19,11 +19,11 @@ $movie2 = new Movie(
     "Inception",
     "Christopher Nolan",
     "2010",
+    ["Fantascienza", "Azione"],
     "Inglese",
-    "Fantascienza",
 );
 
-// var_dump($movie2);
+//  var_dump($movie2);
 echo $movie2->getInfoMovie();
 
 
@@ -32,10 +32,10 @@ $movie3 = new Movie(
     "The Shawshank Redemption",
     "Frank Darabont",
     "1994",
+    ["Drammatico", "Crimine"],
     "Inglese",
-    "Drammatico"
 );
-// var_dump($movie3);
+//  var_dump($movie3);
 echo $movie3->getInfoMovie();
 
 /*istanza 4 */
@@ -43,23 +43,24 @@ $movie4 = new Movie(
     "La La Land",
     "Damien Chazelle",
     "2016",
+    ["Musical", "Romantico"],
     "Inglese",
-    "Musical"
 );
 
-// var_dump($movie4);
+//  var_dump($movie4);
 echo $movie4->getInfoMovie();
+
 
 /* istanza 5 */
 $movie5 = new Movie(
     "La vita è bella",
     "Roberto Benigni",
     "1997",
+    ["Commedia", "Drammatico"],
     "Italiano",
-    "Commedia"
 );
 
-// var_dump($movie5);
+//  var_dump($movie5);
 echo $movie5->getInfoMovie();
 
 
@@ -68,11 +69,11 @@ $movie6 = new Movie(
     "Water for Elephants",
     "Francis Lawrence",
     "2011",
+    ["Drammatico", "Romantico"],
     "Inglese",
-    "Drammatico"
 );
 
-// var_dump($movie6);
+//  var_dump($movie6);
 echo $movie6->getInfoMovie();
 
 ?>

@@ -1,29 +1,28 @@
 <?php
 
-class Movie{
+class Movie
+{
     public $title;
     public $director;
     public $years;
-    public $genre;
+    public $genres = [];
     public $language;
 
-    public function __construct(string $_title, string $_director, string $_years, string $_genre, string $_language)
+    public function __construct($_title,  $_director,  $_years, $_genres,  $_language)
     {
         $this->title = $_title;
         $this->director = $_director;
         $this->years = $_years;
-        $this->genre = $_genre;
+        $this->genres = $_genres;
         $this->language = $_language;
     }
 
-
     public function getInfoMovie()
-    {
-        return 
-        $this->title . " <br> " . 
-        $this->director . " <br>" . 
-        $this->years . " <br>" . 
-        $this->genre . " <br> " . 
-        $this->language;
+    {return "
+    <h1>{$this->title}</h1>
+    <p><b>Regista:</b> {$this->director}</p>
+    <p><b>Anno:</b> {$this->years}</p>
+    <p><b>Generi:</b> " . implode(", ", $this->genres) . "</p>
+    <p><b>Lingua:</b> {$this->language}</p>";
     }
 }
